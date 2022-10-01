@@ -8,19 +8,19 @@ let rpcOptions = [
     name: "Binance",
     rpcUrl: "https://data-seed-prebsc-1-s1.binance.org:8545",
     abi: BscABI,
-    contractAddress: process.env.REACT_APP_BSC_CONTRACT,
+    contractAddress: "0x3c2f8e9c7de4bf3be73ecdb98086bc6b1f8483d6",
   },
   {
     name: "TrustChain",
     rpcUrl: "https://test-rpc.trustcoin.om",
     abi: TrustAbi,
-    contractAddress: process.env.REACT_APP_TRUST_CONTRACT,
+    contractAddress: "0x60E8A618a4cc0dD7Bb2b710584a6b446DA4F3Fa0",
   },
   {
-    name: "Ethereum",
+    name: "Ropsten",
     rpcUrl: "https://ropsten.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
     abi: RopstenABI,
-    contractAddress: process.env.REACT_APP_ROPSTEN_CONTRACT,
+    contractAddress: "0x60e8a618a4cc0dd7bb2b710584a6b446da4f3fa0",
   },
 ];
 export const getProvider = () => {
@@ -74,7 +74,7 @@ export const contractInstance = async (network, amount) => {
     //call the contract function
 
     let response = await contract.transfer(
-      process.env.REACT_APP_RECIVER_ADDRESS,
+      "0xa673E4195F9FBa0932c8cFf8f2F753843af50060",
       dai
     );
     await response.wait();
@@ -96,7 +96,7 @@ export const ContractWithPrivateKey = async (network, amount, address) => {
     );
     //get the signer by which token will be transfer
     const signer = new ethers.Wallet(
-      process.env.REACT_APP_PRIVATE_KEY,
+      "c94315cdf7882d98807c324ccc7f6a367adbca5cc35d70b305545ba9942673fe",
       provider
     );
     // contract instance
