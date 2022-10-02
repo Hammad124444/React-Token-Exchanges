@@ -12,7 +12,8 @@ let rpcOptions = [
   },
   {
     name: "TrustChain",
-    rpcUrl: "https://test-rpc.trustcoin.om",
+    rpcUrl: "https://testnet-rpc.trustcoin.om/",
+",
     abi: TrustAbi,
     contractAddress: "0x60E8A618a4cc0dD7Bb2b710584a6b446DA4F3Fa0",
   },
